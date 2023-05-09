@@ -1,0 +1,9 @@
+podman build . -t vite1
+
+podman run -dt -p 3000:3000 vite1
+podman stop -l
+podman rm -l
+
+podman push -l docker://docker.io/<username>/vite1:0.0.x
+
+podman image prune
